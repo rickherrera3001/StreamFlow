@@ -7,10 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		D03485DC2BFDA98E00FB2F83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DB2BFDA98E00FB2F83 /* HomeView.swift */; };
 		D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */; };
 		D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E02BFDA9BE00FB2F83 /* Model.swift */; };
-		D03485E32BFDAAD600FB2F83 /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E22BFDAAD600FB2F83 /* HomeViewModel.swift */; };
 		D03485E52BFDAAF100FB2F83 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E42BFDAAF100FB2F83 /* LoginView.swift */; };
 		D03485E72BFDAB1300FB2F83 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E62BFDAB1300FB2F83 /* LoginViewModel.swift */; };
 		D03A25662BFDA5C9003A5CA1 /* StreamFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A25652BFDA5C9003A5CA1 /* StreamFlowApp.swift */; };
@@ -22,10 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D03485DB2BFDA98E00FB2F83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D03485E02BFDA9BE00FB2F83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		D03485E22BFDAAD600FB2F83 /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
 		D03485E42BFDAAF100FB2F83 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		D03485E62BFDAB1300FB2F83 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		D03A25622BFDA5C9003A5CA1 /* StreamFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -107,8 +103,6 @@
 		D0D37ACE2BFDA8AF00608238 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D03485DB2BFDA98E00FB2F83 /* HomeView.swift */,
-				D03485E22BFDAAD600FB2F83 /* HomeViewModel.swift */,
 				D03485E42BFDAAF100FB2F83 /* LoginView.swift */,
 				D03485E62BFDAB1300FB2F83 /* LoginViewModel.swift */,
 			);
@@ -189,9 +183,7 @@
 				D03A256F2BFDA5CA003A5CA1 /* Persistence.swift in Sources */,
 				D03A25682BFDA5C9003A5CA1 /* ContentView.swift in Sources */,
 				D03485E52BFDAAF100FB2F83 /* LoginView.swift in Sources */,
-				D03485E32BFDAAD600FB2F83 /* HomeViewModel.swift in Sources */,
 				D03A25662BFDA5C9003A5CA1 /* StreamFlowApp.swift in Sources */,
-				D03485DC2BFDA98E00FB2F83 /* HomeView.swift in Sources */,
 				D03A25722BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld in Sources */,
 				D03485E72BFDAB1300FB2F83 /* LoginViewModel.swift in Sources */,
 				D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */,
