@@ -5,13 +5,11 @@
 //  Created by Ricardo Developer on 21/05/24.
 //
 
-
 import SwiftUI
 
 struct LoginView: View {
     
-    @State var email: String = ""
-    @State var pasword: String = ""
+    @StateObject private var viewModel = LoginViewModel()
     
     var body: some View {
         
@@ -31,31 +29,31 @@ struct LoginView: View {
                         .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255, opacity: 1.0))
                     
                     ZStack(alignment: .leading) {
-                        if email.isEmpty {
+                        if viewModel.email.isEmpty {
                             Text("example@gmail.com")
                                 .font(.caption)
                                 .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255, opacity: 1.0))
                         }
                         
-                        TextField("", text: $email)
+                        TextField("", text: $viewModel.email)
                             .padding()
                             .background(Color.gray)
                             .cornerRadius(5.0)
                             .foregroundColor(.black)
                     }
                     
-                    Text("Pasword")
+                    Text("Password")
                         .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255, opacity: 1.0))
                         .padding(.top, 20)
                     
                     ZStack(alignment: .leading) {
-                        if pasword.isEmpty {
+                        if viewModel.password.isEmpty {
                             Text("Enter your password")
                                 .font(.caption)
                                 .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255, opacity: 1.0))
                         }
                         
-                        SecureField("", text: $pasword)
+                        SecureField("", text: $viewModel.password)
                             .padding()
                             .background(Color.gray)
                             .cornerRadius(5.0)
@@ -63,6 +61,17 @@ struct LoginView: View {
                     }
                 }
                 .padding(.horizontal)
+                
+                Button(action: {
+                    viewModel.login()
+                }) {
+                    Text("Login")
+                        .foregroundColor(.green)
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(5.0)
+                }
+                .padding(.top, 20)
                 
                 Spacer()
             }
@@ -73,4 +82,3 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
-
