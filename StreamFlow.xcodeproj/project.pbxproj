@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		476CAE502BFDD16D00B9D520 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */; };
+		476CAE522BFDD18400B9D520 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CAE512BFDD18400B9D520 /* GenderView.swift */; };
 		D03485DC2BFDA98E00FB2F83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DB2BFDA98E00FB2F83 /* HomeView.swift */; };
 		D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */; };
 		D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E02BFDA9BE00FB2F83 /* Model.swift */; };
@@ -22,6 +24,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = SOURCE_ROOT; };
+		476CAE512BFDD18400B9D520 /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
 		D03485DB2BFDA98E00FB2F83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D03485E02BFDA9BE00FB2F83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -108,6 +112,8 @@
 			isa = PBXGroup;
 			children = (
 				D03485DB2BFDA98E00FB2F83 /* HomeView.swift */,
+				476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */,
+				476CAE512BFDD18400B9D520 /* GenderView.swift */,
 				D03485E22BFDAAD600FB2F83 /* HomeViewModel.swift */,
 				D03485E42BFDAAF100FB2F83 /* LoginView.swift */,
 				D03485E62BFDAB1300FB2F83 /* LoginViewModel.swift */,
@@ -185,8 +191,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				476CAE502BFDD16D00B9D520 /* FavoritesView.swift in Sources */,
 				D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */,
 				D03A256F2BFDA5CA003A5CA1 /* Persistence.swift in Sources */,
+				476CAE522BFDD18400B9D520 /* GenderView.swift in Sources */,
 				D03A25682BFDA5C9003A5CA1 /* ContentView.swift in Sources */,
 				D03485E52BFDAAF100FB2F83 /* LoginView.swift in Sources */,
 				D03485E32BFDAAD600FB2F83 /* HomeViewModel.swift in Sources */,
