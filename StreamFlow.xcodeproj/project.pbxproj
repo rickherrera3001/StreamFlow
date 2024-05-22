@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D03485DC2BFDA98E00FB2F83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DB2BFDA98E00FB2F83 /* HomeView.swift */; };
+		D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */; };
+		D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E02BFDA9BE00FB2F83 /* Model.swift */; };
 		D03A25662BFDA5C9003A5CA1 /* StreamFlowApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A25652BFDA5C9003A5CA1 /* StreamFlowApp.swift */; };
 		D03A25682BFDA5C9003A5CA1 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A25672BFDA5C9003A5CA1 /* ContentView.swift */; };
 		D03A256A2BFDA5CA003A5CA1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03A25692BFDA5CA003A5CA1 /* Assets.xcassets */; };
@@ -16,6 +19,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		D03485DB2BFDA98E00FB2F83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
+		D03485E02BFDA9BE00FB2F83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		D03A25622BFDA5C9003A5CA1 /* StreamFlow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = StreamFlow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03A25652BFDA5C9003A5CA1 /* StreamFlowApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StreamFlowApp.swift; sourceTree = "<group>"; };
 		D03A25672BFDA5C9003A5CA1 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +42,13 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D03485DD2BFDA99300FB2F83 /* HomeViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = HomeViewModel;
+			sourceTree = "<group>";
+		};
 		D03A25592BFDA5C9003A5CA1 = {
 			isa = PBXGroup;
 			children = (
@@ -55,6 +68,9 @@
 		D03A25642BFDA5C9003A5CA1 /* StreamFlow */ = {
 			isa = PBXGroup;
 			children = (
+				D0D37ACE2BFDA8AF00608238 /* Modules */,
+				D03A25792BFDA64E003A5CA1 /* Network */,
+				D03A25782BFDA63E003A5CA1 /* Models */,
 				D03A25652BFDA5C9003A5CA1 /* StreamFlowApp.swift */,
 				D03A25672BFDA5C9003A5CA1 /* ContentView.swift */,
 				D03A25692BFDA5CA003A5CA1 /* Assets.xcassets */,
@@ -71,6 +87,31 @@
 				D03A256C2BFDA5CA003A5CA1 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		D03A25782BFDA63E003A5CA1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D03485E02BFDA9BE00FB2F83 /* Model.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D03A25792BFDA64E003A5CA1 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D0D37ACE2BFDA8AF00608238 /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				D03485DD2BFDA99300FB2F83 /* HomeViewModel */,
+				D03485DB2BFDA98E00FB2F83 /* HomeView.swift */,
+			);
+			path = Modules;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,10 +184,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */,
 				D03A256F2BFDA5CA003A5CA1 /* Persistence.swift in Sources */,
 				D03A25682BFDA5C9003A5CA1 /* ContentView.swift in Sources */,
 				D03A25662BFDA5C9003A5CA1 /* StreamFlowApp.swift in Sources */,
+				D03485DC2BFDA98E00FB2F83 /* HomeView.swift in Sources */,
 				D03A25722BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld in Sources */,
+				D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
