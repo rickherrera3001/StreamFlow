@@ -1,10 +1,7 @@
 {
-  "colors" : [
+  "images" : [
     {
       "idiom" : "universal"
-    },
-    {
-      "idiom" : "iphone"
     }
   ],
   "info" : {

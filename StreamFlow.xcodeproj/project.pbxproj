@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		476CAE502BFDD16D00B9D520 /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */; };
 		476CAE522BFDD18400B9D520 /* GenderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CAE512BFDD18400B9D520 /* GenderView.swift */; };
+		476CAE542BFE7E5100B9D520 /* FavoriteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 476CAE532BFE7E5100B9D520 /* FavoriteViewModel.swift */; };
 		D03485DC2BFDA98E00FB2F83 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DB2BFDA98E00FB2F83 /* HomeView.swift */; };
 		D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */; };
 		D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03485E02BFDA9BE00FB2F83 /* Model.swift */; };
@@ -26,6 +27,7 @@
 /* Begin PBXFileReference section */
 		476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = SOURCE_ROOT; };
 		476CAE512BFDD18400B9D520 /* GenderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenderView.swift; sourceTree = "<group>"; };
+		476CAE532BFE7E5100B9D520 /* FavoriteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewModel.swift; sourceTree = "<group>"; };
 		D03485DB2BFDA98E00FB2F83 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		D03485DE2BFDA9AE00FB2F83 /* ApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiClient.swift; sourceTree = "<group>"; };
 		D03485E02BFDA9BE00FB2F83 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
@@ -112,9 +114,10 @@
 			isa = PBXGroup;
 			children = (
 				D03485DB2BFDA98E00FB2F83 /* HomeView.swift */,
-				476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */,
-				476CAE512BFDD18400B9D520 /* GenderView.swift */,
 				D03485E22BFDAAD600FB2F83 /* HomeViewModel.swift */,
+				476CAE4F2BFDD16D00B9D520 /* FavoritesView.swift */,
+				476CAE532BFE7E5100B9D520 /* FavoriteViewModel.swift */,
+				476CAE512BFDD18400B9D520 /* GenderView.swift */,
 				D03485E42BFDAAF100FB2F83 /* LoginView.swift */,
 				D03485E62BFDAB1300FB2F83 /* LoginViewModel.swift */,
 			);
@@ -203,6 +206,7 @@
 				D03A25722BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld in Sources */,
 				D03485E72BFDAB1300FB2F83 /* LoginViewModel.swift in Sources */,
 				D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */,
+				476CAE542BFE7E5100B9D520 /* FavoriteViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
