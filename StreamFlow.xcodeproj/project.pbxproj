@@ -17,6 +17,8 @@
 		D03A256D2BFDA5CA003A5CA1 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D03A256C2BFDA5CA003A5CA1 /* Preview Assets.xcassets */; };
 		D03A256F2BFDA5CA003A5CA1 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A256E2BFDA5CA003A5CA1 /* Persistence.swift */; };
 		D03A25722BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = D03A25702BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld */; };
+		D071A6B92BFEAA4D004EBF1E /* ForgotPasswordView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D071A6B82BFEAA4D004EBF1E /* ForgotPasswordView.swift */; };
+		D071A6BB2BFEAA7F004EBF1E /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D071A6BA2BFEAA7F004EBF1E /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +33,8 @@
 		D03A256C2BFDA5CA003A5CA1 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		D03A256E2BFDA5CA003A5CA1 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		D03A25712BFDA5CA003A5CA1 /* StreamFlow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = StreamFlow.xcdatamodel; sourceTree = "<group>"; };
+		D071A6B82BFEAA4D004EBF1E /* ForgotPasswordView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordView.swift; sourceTree = "<group>"; };
+		D071A6BA2BFEAA7F004EBF1E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,8 +107,10 @@
 		D0D37ACE2BFDA8AF00608238 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				D03485E42BFDAAF100FB2F83 /* LoginView.swift */,
 				D03485E62BFDAB1300FB2F83 /* LoginViewModel.swift */,
+				D03485E42BFDAAF100FB2F83 /* LoginView.swift */,
+				D071A6B82BFEAA4D004EBF1E /* ForgotPasswordView.swift */,
+				D071A6BA2BFEAA7F004EBF1E /* RegisterView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -180,12 +186,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				D03485E12BFDA9BE00FB2F83 /* Model.swift in Sources */,
+				D071A6BB2BFEAA7F004EBF1E /* RegisterView.swift in Sources */,
 				D03A256F2BFDA5CA003A5CA1 /* Persistence.swift in Sources */,
 				D03A25682BFDA5C9003A5CA1 /* ContentView.swift in Sources */,
 				D03485E52BFDAAF100FB2F83 /* LoginView.swift in Sources */,
 				D03A25662BFDA5C9003A5CA1 /* StreamFlowApp.swift in Sources */,
 				D03A25722BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld in Sources */,
 				D03485E72BFDAB1300FB2F83 /* LoginViewModel.swift in Sources */,
+				D071A6B92BFEAA4D004EBF1E /* ForgotPasswordView.swift in Sources */,
 				D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
