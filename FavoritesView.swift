@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+
 // Modelo de película
 struct Movie: Identifiable {
     let id = UUID()
@@ -15,6 +16,7 @@ struct Movie: Identifiable {
 }
 
 struct FavoritesView: View {
+    
     // Lista de películas de ejemplo
     let movies = [
         Movie(title: "Movie 1", poster: "poster1"),
@@ -30,7 +32,8 @@ struct FavoritesView: View {
     
     var body: some View {
         ZStack {
-            Color(UIColor.purple) // Fondo de color
+            // color de fondo
+            Color(red: 18/255, green: 31/255, blue: 61/255).ignoresSafeArea()
                             .edgesIgnoringSafeArea(.all) // Ignora los márgenes seguros para cubrir toda la pantalla
             
             VStack {
@@ -38,7 +41,7 @@ struct FavoritesView: View {
                         Text(" My favorite movies")
                         .italic()
 //                        .font(.custom("YourFontName", size: 24))
-                        .foregroundColor(.red) //color del texto
+                        .foregroundColor(.green) //color del texto
                         .font(.system(size: 26))//tamaño del texto
                         .fontWeight(.bold) // texto negrita
                     Image(systemName: "heart.fill")
@@ -75,7 +78,7 @@ struct FavoritesView: View {
                     .padding(.vertical, 50) // Padding vertical si deseas espacio adicional en la parte superior e inferior
                     //                .padding()
                 }
-                .background(Color(UIColor.green))
+
                 
                 
             }

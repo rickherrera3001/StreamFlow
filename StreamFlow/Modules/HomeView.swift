@@ -11,10 +11,6 @@ struct tabView: View {
     @State private var selectedTab: Int = 0
     
     var body: some View {
-        
-        VStack {
-            
-        }
         TabView(selection: $selectedTab) {
             FirstView()
                 .tabItem {
@@ -39,18 +35,37 @@ struct tabView: View {
 
 struct FirstView: View {
     var body: some View {
-        ScrollView(.vertical) {
-            VStack(spacing: 30) {
-                HorizontalScrollView(title: "Upcoming", color: .red)
-                HorizontalScrollView(title: "Comedy", color: .green)
-                HorizontalScrollView(title: "Action", color: .blue)
-                HorizontalScrollView(title: "ScrollView 4", color: .indigo)
+        ZStack{
+            Color(red: 18/255, green: 31/255, blue: 61/255).ignoresSafeArea()
+            // Fondo difuminado
+//            LinearGradient(
+//                gradient: Gradient(colors: [Color.purple, Color.black]),
+//                startPoint: .topLeading,
+//                endPoint: .bottomTrailing
+//            )
+            .edgesIgnoringSafeArea(.all) // Cubre toda la pantalla incluyendo las áreas seguras
+            
+            VStack{
+                HStack {
+                    Text ("Home")
+                        .padding(.top,10)
+                        .offset(CGSize(width: 20, height: 20))
+                    
+                }
+                
+                ScrollView(.vertical) {
+                    VStack(spacing: 30) {
+                        HorizontalScrollView(title: "Upcoming", color: .purple)
+                        HorizontalScrollView(title: "Comedy", color: .black)
+                        HorizontalScrollView(title: "Action", color: .blue)
+                        HorizontalScrollView(title: "ScrollView 4", color: .indigo)
+                    }
+                    .padding()
+                }
             }
-            .padding()
         }
     }
 }
-
 struct HorizontalScrollView: View {
     let title: String
     let color: Color
@@ -83,11 +98,4 @@ struct HorizontalScrollView: View {
 }
 
 
-//            Image(systemName: "play.house")
-//                .foregroundColor(.blue)
-//            Text("Home")
-//                .italic()
-//            //                        .font(.custom("YourFontName", size: 24))
-//                .foregroundColor(.blue) //color del texto
-//                .font(.system(size: 26))//tamaño del texto
-//                .fontWeight(.bold) // texto negrita
+
