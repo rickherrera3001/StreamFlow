@@ -5,23 +5,60 @@
 //  Created by Ricardo Developer on 21/05/24.
 //
 
-import Foundation
 
-// APIClient
+import Foundation
+class APIClient {
+    
+    func getDataUpcoming(completion: @escaping (Result<MovieModel,Error>) -> Void) {
+        let headers = [
+            "X-RapidAPI-Key": "c2bcfa61f1mshf2abcf111b8af04p11138ejsnd5ae171d439b",
+            "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
+        ]
+        
+        var request = URLRequest(url:URL(string: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming")!, timeoutInterval: Double.infinity)
+        
+        request.httpMethod = "GET"
+        request.allHTTPHeaderFields = headers
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            guard let data = data else {
+                if let error = error {
+                    print("Error: \(error)")
+                }
+                return
+            }
+            //print(String(data: data, encoding: .utf8)!)
+            do {
+                let result = try JSONDecoder().decode(MovieModel.self, from: data)
+                completion(.success(result))
+            } catch {
+                print("Error decoding JSON:\(error)")
+                completion(.failure(error))
+            }
+            
+        }.resume()
+        
+    }
+}
+
+
+
+
+/*import Foundation
+
 class APIClient {
     static let shared = APIClient()
     let headers = [
-                "X-RapidAPI-Key": "d7b4708509msh6675f58eb66caadp182309jsn2e6e7156ee4e",
-                "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
-            ]
-    
+        "X-RapidAPI-Key": "d7b4708509msh6675f58eb66caadp182309jsn2e6e7156ee4e",
+        "X-RapidAPI-Host": "moviesdatabase.p.rapidapi.com"
+    ]
     
     private let baseURL = URL(string: "https://moviesdatabase.p.rapidapi.com/titles/x/upcoming")!
     
     private init() {}
     
     func fetchMovies(page: Int, completion: @escaping (Result<MovieModel, Error>) -> Void) {
-        var urlComponents = URLComponents(url: baseURL.appendingPathComponent("movies"), resolvingAgainstBaseURL: true)
+        var urlComponents = URLComponents(url: baseURL, resolvingAgainstBaseURL: true)
         urlComponents?.queryItems = [
             URLQueryItem(name: "page", value: "\(page)")
         ]
@@ -31,7 +68,10 @@ class APIClient {
             return
         }
         
-        let task = URLSession.shared.dataTask(with: url) { data, response, error in
+        var request = URLRequest(url: url)
+        request.allHTTPHeaderFields = headers
+        
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
             if let error = error {
                 completion(.failure(error))
                 return
@@ -52,7 +92,7 @@ class APIClient {
                 let movieModel = try decoder.decode(MovieModel.self, from: data)
                 completion(.success(movieModel))
             } catch {
-                completion(.failure(error))
+                completion(.failure(APIError.decodingError))
             }
         }
         
@@ -79,7 +119,7 @@ enum APIError: Error, LocalizedError {
             return "Failed to decode the data."
         }
     }
-}
+}*/
 
 //https://moviesdatabase.p.rapidapi.com/titles/x/upcoming
 
