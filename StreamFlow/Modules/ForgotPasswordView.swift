@@ -1,4 +1,4 @@
-//
+
 //  ForgotPasswordView.swift
 //  StreamFlow
 //
@@ -9,64 +9,57 @@ import SwiftUI
 
 struct ForgotPasswordView: View {
     @State private var email: String = ""
-    @EnvironmentObject private var viewModel: LoginViewModel
+    @ObservedObject var viewModel: LoginViewViewModel
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                Color(red: 18/255, green: 31/255, blue: 61/255).ignoresSafeArea()
+        ZStack {
+            Color(red: 18/255, green: 31/255, blue: 61/255).ignoresSafeArea()
+            
+            VStack(spacing: 20) {
+                Text("Recover Password")
+                    .font(.title)
+                    .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255))
                 
-                VStack {
-                    Text("Recover Password")
-                        .font(.title)
-                        .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255, opacity: 1.0))
-                        .padding(.bottom, 20)
-                    
-                    ZStack(alignment: .leading) {
-                        if email.isEmpty {
-                            Text("Email")
-                                .font(.caption)
-                                .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255, opacity: 1.0))
-                        }
-                        
-                        TextField("", text: $email)
-                            .padding()
-                            .background(Color.gray)
-                            .cornerRadius(5.0)
-                            .foregroundColor(.black)
+                ZStack(alignment: .leading) {
+                    if email.isEmpty {
+                        Text("Email")
+                            .font(.caption)
+                            .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255))
+                            .padding(.leading, 8)
                     }
-                    .padding(.bottom, 20)
                     
-                    Button(action: {
-                        // Agrega aquí la lógica para resetear la contraseña
-                    }) {
-                        Text("Reset Password")
-                            .fontWeight(.bold)
-                            .foregroundColor(.green)
-                            .frame(maxWidth: .infinity)
-                            .padding(EdgeInsets(top: 11, leading: 18, bottom: 11, trailing: 18))
-                            .background(Color.gray)
-                            .cornerRadius(6)
-                            .overlay(RoundedRectangle(cornerRadius: 6)
-                                        .stroke(Color("Dark-Cyan"), lineWidth: 3)
-                                        .shadow(color: .white, radius: 6))
-                    }
-                    .padding(.bottom, 20)
-                    
-                    Text("Cancel")
-                        .foregroundColor(.green)
-                        .padding(.bottom, 20)
-                        .onTapGesture {
-                            viewModel.dismissForgotPasswordView()
-                        }
+                    TextField("", text: $email)
+                        .padding()
+                        .background(Color.gray.opacity(0.2))
+                        .cornerRadius(5.0)
+                        .foregroundColor(.black)
                 }
-                .padding()
+                
+                Button(action: {
+                    // Agrega aquí la lógica para resetear la contraseña
+                    viewModel.forgotPasswordEmail = email
+                    viewModel.forgotPassword()
+                }) {
+                    Text("Reset Password")
+                        .fontWeight(.bold)
+                        .foregroundColor(.green)
+                        .frame(maxWidth: .infinity)
+                        .padding()
+                        .background(Color.gray)
+                        .cornerRadius(6)
+                        .overlay(RoundedRectangle(cornerRadius: 6)
+                            .stroke(Color("Dark-Cyan"), lineWidth: 3))
+                }
+                
             }
-            .navigationTitle("StreamFlow")
+            .padding()
         }
+        .navigationTitle("StreamFlow")
+        
     }
 }
 
 #Preview {
-    ForgotPasswordView()
+    ForgotPasswordView(viewModel: LoginViewViewModel())
 }
+

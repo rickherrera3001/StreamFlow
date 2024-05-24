@@ -1,15 +1,14 @@
-    //
-    //  LoginViewModel.swift
-    //  StreamFlow
-    //
-    //  Created by Ricardo Developer on 21/05/24.
-    //
-
+//
+//  LoginViewModel.swift
+//  StreamFlow
+//
+//  Created by Ricardo Developer on 21/05/24.
+//
 
 import SwiftUI
 
 struct LoginView: View {
-    @StateObject private var viewModel = LoginViewModel()
+    @StateObject  var viewModel = LoginViewViewModel()
     
     var body: some View {
         NavigationView {
@@ -37,7 +36,7 @@ struct LoginView: View {
                             
                             TextField("", text: $viewModel.email)
                                 .padding()
-                                .background(Color.gray)
+                                .background(Color.gray.opacity(0.2))
                                 .cornerRadius(5.0)
                                 .foregroundColor(.black)
                         }
@@ -55,50 +54,64 @@ struct LoginView: View {
                             
                             SecureField("", text: $viewModel.password)
                                 .padding()
-                                .background(Color.gray)
+                                .background(Color.gray.opacity(0.2))
                                 .cornerRadius(5.0)
                                 .foregroundColor(.black)
                         }
                         
-                        NavigationLink(destination: ForgotPasswordView(), isActive: $viewModel.showForgotPasswordView) {
-                            Text("Forgot Password?")
-                                .font(.footnote)
-                                .frame(width: 300, alignment: .trailing)
-                                .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255))
-                                .padding(.top, 10)
-                                .onTapGesture {
-                                    viewModel.forgotPassword()
-                                }
-                        }
+                        Text("Forgot Password?")
+                            .font(.footnote)
+                            .frame(width: 300, alignment: .trailing)
+                            .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255))
+                            .padding(.top, 10)
+                            .onTapGesture {
+                                viewModel.isForgotPasswordSuccess = true
+                            }
                     }
                     .padding(.horizontal)
                     
                     Button(action: {
                         viewModel.login()
                     }) {
-                        Text("Login")
-                            .foregroundColor(.green)
-                            .padding()
-                            .background(Color.gray)
-                            .cornerRadius(5.0)
+                        if viewModel.isLoading {
+                            ProgressView()
+                                .padding()
+                                .background(Color.gray.opacity(0.2))
+                                .cornerRadius(5.0)
+                        } else {
+                            Text("Login")
+                                .foregroundColor(.white)
+                                .padding()
+                                .background(Color.green)
+                                .cornerRadius(5.0)
+                        }
                     }
                     .padding(.top, 20)
                     
-                    NavigationLink(destination: RegisterView(), isActive: $viewModel.showRegisterView) {
-                        Button(action: {
-                            viewModel.register()
-                        }) {
-                            Text("Register")
-                                .foregroundColor(.green)
-                                .padding()
-                                .background(Color.gray)
-                                .cornerRadius(5.0)
-                        }
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundColor(.red)
+                            .padding(.top, 10)
+                    }
+                    
+                    NavigationLink(destination: ForgotPasswordView(viewModel: viewModel), isActive: $viewModel.isForgotPasswordSuccess) {
+                        EmptyView()
+                    }
+                    
+                    Text("Create An Account")
+                        .foregroundColor(.green)
                         .padding(.top, 10)
+                        .onTapGesture {
+                            viewModel.showRegisterView = true
+                        }
+                    
+                    NavigationLink(destination: RegisterView(), isActive: $viewModel.showRegisterView) {
+                        EmptyView()
                     }
                     
                     Spacer()
                 }
+                .padding()
             }
             .navigationTitle("StreamFlow")
         }
@@ -108,4 +121,6 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
+
+
 
