@@ -9,6 +9,7 @@ import Foundation
 import SwiftUI
 import Combine
 
+
 class HomeViewModel: ObservableObject {
     
     
@@ -33,7 +34,61 @@ class HomeViewModel: ObservableObject {
         }
         
     }
+    
 }
+
+/*class HomeViewModel: ObservableObject {
+    
+    
+    @Published var upcomingMovies: [Movies]? = []
+    @Published var error: Error?
+    
+    
+    private let apiClient = APIClient()
+    
+    func getUpcomingMovies() {
+        apiClient.getDataUpcoming() { result in
+            DispatchQueue.main.async {
+                switch result {
+                case.success(let upcomings):
+                    self.upcomingMovies = upcomings.results
+                    print("Results \(upcomings)")
+                case.failure(let error):
+                    print("Error \(error)")
+                }
+            }
+            
+        }
+        
+    }
+    // Nueva función para obtener películas por género
+    func getMoviesByGenre(genre: String) {
+        apiClient.getDataByGenre(genre: genre) { result in
+            DispatchQueue.main.async {
+                switch result {
+                case .success(let movies):
+                    self.upcomingMovies = movies.results
+                case .failure(let error):
+                    self.error = error
+                    print("Error fetching movies by genre: \(error)")
+                }
+            }
+        }
+    }
+
+    }*/
+
+
+
+
+
+
+
+
+
+
+
+
 /*
  import Foundation
  import SwiftUI
@@ -60,8 +115,8 @@ class HomeViewModel: ObservableObject {
              }
          }
      }
- }
- */
+ }*/
+ 
 
 
 

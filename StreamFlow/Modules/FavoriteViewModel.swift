@@ -14,7 +14,7 @@ struct MovieFav: Identifiable, Equatable {
     let poster: String // URL or name of the image
 }
 
-class Favorites: ObservableObject {
+class FavoritesB: ObservableObject {
     @Published var favoriteMovies: [MovieFav]
     
     init() {

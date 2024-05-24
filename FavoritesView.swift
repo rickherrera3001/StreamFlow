@@ -77,6 +77,7 @@ struct FavoritesView: View {
                     .padding(.horizontal, 10)
                     .padding(.vertical, 20)
                 }
+        
                 
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack {
@@ -195,4 +196,5 @@ struct FavoritesView: View {
 }
     #Preview {
         FavoritesView()
-    }*/
+    }
+*/
