@@ -31,7 +31,7 @@ struct ForgotPasswordView: View {
                             .foregroundColor(.green)
                             .padding(.horizontal)
                     }
-
+                    
                     ZStack(alignment: .leading) {
                         if email.isEmpty {
                             Text("Email Address")
