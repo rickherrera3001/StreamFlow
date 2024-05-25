@@ -9,10 +9,6 @@
 
     struct RegisterView: View {
         @StateObject var viewmodel = LoginViewViewModel()
-//        @State private var fullName: String = ""
-//        @State private var emailAddress: String = ""
-//        @State private var password: String = ""
-//        @EnvironmentObject private var viewModel: LoginViewViewModel
         
         var body: some View {
             
@@ -25,14 +21,14 @@
                             .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255, opacity: 1.0))
                             .padding(.bottom, 20)
                         
-                        TextField("Full Name", text: $viewmodel.name /*$fullName*/)
+                        TextField("Full Name", text: $viewmodel.name)
                             .padding()
                             .background(Color.gray)
                             .cornerRadius(5.0)
                             .foregroundColor(.black)
                             .padding(.bottom, 20)
                         
-                        TextField("Email Address", text: $viewmodel.email /*$emailAddress*/)
+                        TextField("Email Address", text: $viewmodel.email)
                             .padding()
                             .background(Color.gray)
                             .cornerRadius(5.0)
@@ -40,7 +36,7 @@
                             .padding(.bottom, 20)
                             .autocapitalization(.none)
                         
-                        SecureField("Password", text: $viewmodel.password /*$password*/)
+                        SecureField("Password", text: $viewmodel.password)
                             .padding()
                             .background(Color.gray)
                             .cornerRadius(5.0)

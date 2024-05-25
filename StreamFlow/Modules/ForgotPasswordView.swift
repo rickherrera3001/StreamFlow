@@ -3,7 +3,6 @@
 //  StreamFlow
 //
 //  Created by Ricardo Developer on 22/05/24.
-//
 
 import SwiftUI
 
@@ -20,36 +19,36 @@ struct ForgotPasswordView: View {
                     .font(.title)
                     .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255))
                 
-                ZStack(alignment: .leading) {
-                    if email.isEmpty {
-                        Text("Email Address")
-                            .font(.caption)
-                            .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255))
-                            .padding(.leading, 8)
-                    }
-                    
-                    TextField("", text: $viewModel.forgotPasswordEmail)
-                        .padding()
-                        .background(Color.gray.opacity(0.2))
-                        .cornerRadius(5.0)
-                        .foregroundColor(.black)
-                    
+                VStack(alignment: .leading, spacing: 10) {
                     if !viewModel.forgotPasswordErrorMessage.isEmpty {
                         Text(viewModel.forgotPasswordErrorMessage)
                             .foregroundColor(.red)
-                            .padding()
+                            .padding(.horizontal)
                     }
                     
                     if viewModel.isForgotPasswordSuccess {
                         Text("A password reset link has been sent to your email.")
                             .foregroundColor(.green)
+                            .padding(.horizontal)
+                    }
+
+                    ZStack(alignment: .leading) {
+                        if email.isEmpty {
+                            Text("Email Address")
+                                .font(.caption)
+                                .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255))
+                                .padding(.leading, 8)
+                        }
+                        
+                        TextField("", text: $viewModel.forgotPasswordEmail)
                             .padding()
+                            .background(Color.gray.opacity(0.2))
+                            .cornerRadius(5.0)
+                            .foregroundColor(.black)
                     }
                 }
                 
                 Button(action: {
-                    // Agrega aquí la lógica para resetear la contraseña
-                    //viewModel.forgotPasswordEmail = email
                     viewModel.forgotPassword()
                 }) {
                     Text("Reset Password")
@@ -72,4 +71,3 @@ struct ForgotPasswordView: View {
 #Preview {
     ForgotPasswordView(viewModel: LoginViewViewModel())
 }
-

@@ -1,4 +1,4 @@
-////
+
 ////  LoginViewModel.swift
 ////  StreamFlow
 ////
@@ -8,7 +8,7 @@ import SwiftUI
 
 struct LoginView: View {
     //@AppStorage("isLoggedIn") private var isLoggedIn = false
-    @StateObject  var viewModel = LoginViewViewModel()
+    @StateObject var viewModel = LoginViewViewModel()
     
     var body: some View {
         NavigationView {
@@ -24,21 +24,21 @@ struct LoginView: View {
                         .padding(.top, 50)
                     
                     VStack(alignment: .leading) {
-                        if !viewModel.errorMessage.isEmpty{
+                        if !viewModel.errorMessage.isEmpty {
                             Text(viewModel.errorMessage)
                                 .foregroundColor(.red)
                         }
                         
-                        
-                        TextField("Email Address", text: $viewModel.email)
-                            .background(Color(red: 18/255, green: 31/255, blue: 61/255))
-                            .autocapitalization(.none)
+                        Text("Email Address")
+                            .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255, opacity: 1.0))
+                            .padding(.bottom, 5)
                         
                         ZStack(alignment: .leading) {
                             if viewModel.email.isEmpty {
                                 Text("example@gmail.com")
                                     .font(.caption)
                                     .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255, opacity: 1.0))
+                                    .padding(.leading, 5)
                             }
                             
                             TextField("", text: $viewModel.email)
@@ -57,9 +57,10 @@ struct LoginView: View {
                                 Text("Enter your password")
                                     .font(.caption)
                                     .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255, opacity: 1.0))
+                                    .padding(.leading, 5)
                             }
                             
-                            SecureField("Password", text: $viewModel.password)
+                            SecureField("", text: $viewModel.password)
                                 .padding()
                                 .background(Color.gray.opacity(0.2))
                                 .cornerRadius(5.0)
@@ -87,10 +88,14 @@ struct LoginView: View {
                                 .cornerRadius(5.0)
                         } else {
                             Text("Login")
-                                .foregroundColor(.white)
+                                .fontWeight(.bold)
+                                .foregroundColor(.green)
+                                .frame(maxWidth: .infinity)
                                 .padding()
-                                .background(Color.green)
-                                .cornerRadius(5.0)
+                                .background(Color.gray)
+                                .cornerRadius(6)
+                                .overlay(RoundedRectangle(cornerRadius: 6)
+                                    .stroke(Color("Dark-Cyan"), lineWidth: 3))
                         }
                     }
                     .padding(.top, 20)
@@ -128,5 +133,3 @@ struct LoginView: View {
 #Preview {
     LoginView()
 }
-
-
