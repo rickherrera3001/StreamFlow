@@ -24,24 +24,23 @@ class LoginViewViewModel: ObservableObject {
     
     init() {}
     
-    // Register function
     func register() {
         guard validate() else {
             return
         }
         
-        Auth.auth().createUser(withEmail: email, password: password) { [weak self] result, error in
+        Auth.auth().createUser(withEmail: email, password: password) {[weak self] result, error in
             if let error = error {
                 self?.errorMessage = error.localizedDescription
                 return
             }
             
             guard let userId = result?.user.uid else {
-                self?.errorMessage = "Failed to retrieve user ID."
+                self?.errorMessage = "Failed to retreive iser ID"
                 return
             }
-            
             self?.insertUserRecord(id: userId)
+            
         }
     }
     

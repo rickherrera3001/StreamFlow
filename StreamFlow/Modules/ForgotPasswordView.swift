@@ -16,28 +16,40 @@ struct ForgotPasswordView: View {
             Color(red: 18/255, green: 31/255, blue: 61/255).ignoresSafeArea()
             
             VStack(spacing: 20) {
-                Text("Recover Password")
+                Text("Forgot Password")
                     .font(.title)
                     .foregroundColor(Color(red: 63/255, green: 202/255, blue: 160/255))
                 
                 ZStack(alignment: .leading) {
                     if email.isEmpty {
-                        Text("Email")
+                        Text("Email Address")
                             .font(.caption)
                             .foregroundColor(Color(red: 174/255, green: 177/255, blue: 185/255))
                             .padding(.leading, 8)
                     }
                     
-                    TextField("", text: $email)
+                    TextField("", text: $viewModel.forgotPasswordEmail)
                         .padding()
                         .background(Color.gray.opacity(0.2))
                         .cornerRadius(5.0)
                         .foregroundColor(.black)
+                    
+                    if !viewModel.forgotPasswordErrorMessage.isEmpty {
+                        Text(viewModel.forgotPasswordErrorMessage)
+                            .foregroundColor(.red)
+                            .padding()
+                    }
+                    
+                    if viewModel.isForgotPasswordSuccess {
+                        Text("A password reset link has been sent to your email.")
+                            .foregroundColor(.green)
+                            .padding()
+                    }
                 }
                 
                 Button(action: {
                     // Agrega aquí la lógica para resetear la contraseña
-                    viewModel.forgotPasswordEmail = email
+                    //viewModel.forgotPasswordEmail = email
                     viewModel.forgotPassword()
                 }) {
                     Text("Reset Password")
@@ -54,8 +66,6 @@ struct ForgotPasswordView: View {
             }
             .padding()
         }
-        .navigationTitle("StreamFlow")
-        
     }
 }
 

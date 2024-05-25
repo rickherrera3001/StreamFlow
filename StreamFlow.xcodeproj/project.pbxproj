@@ -22,7 +22,6 @@
 		D071A6BD2BFEC328004EBF1E /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D071A6BC2BFEC328004EBF1E /* Launch Screen.storyboard */; };
 		D071A6C12BFED5FD004EBF1E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D071A6C02BFED5FD004EBF1E /* GoogleService-Info.plist */; };
 		D07DA5FE2BFFE68F0053CFB6 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = D07DA5FD2BFFE68F0053CFB6 /* FirebaseFirestore */; };
-		D07DA6002C0042330053CFB6 /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D07DA5FF2C0042330053CFB6 /* ProfileView.swift */; };
 		D0D026152BFEE545000D7038 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = D0D026142BFEE545000D7038 /* FirebaseAuth */; };
 		D0D026192BFEE545000D7038 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = D0D026182BFEE545000D7038 /* FirebaseFirestoreSwift */; };
 /* End PBXBuildFile section */
@@ -43,7 +42,6 @@
 		D071A6BA2BFEAA7F004EBF1E /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		D071A6BC2BFEC328004EBF1E /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		D071A6C02BFED5FD004EBF1E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		D07DA5FF2C0042330053CFB6 /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,7 +131,6 @@
 				D03485E42BFDAAF100FB2F83 /* LoginView.swift */,
 				D071A6B82BFEAA4D004EBF1E /* ForgotPasswordView.swift */,
 				D071A6BA2BFEAA7F004EBF1E /* RegisterView.swift */,
-				D07DA5FF2C0042330053CFB6 /* ProfileView.swift */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -227,7 +224,6 @@
 				D03A25722BFDA5CA003A5CA1 /* StreamFlow.xcdatamodeld in Sources */,
 				D03485E72BFDAB1300FB2F83 /* LoginViewModel.swift in Sources */,
 				D071A6B92BFEAA4D004EBF1E /* ForgotPasswordView.swift in Sources */,
-				D07DA6002C0042330053CFB6 /* ProfileView.swift in Sources */,
 				D03485DF2BFDA9AE00FB2F83 /* ApiClient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
